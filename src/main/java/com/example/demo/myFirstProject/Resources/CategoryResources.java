@@ -16,11 +16,11 @@ import java.util.List;
 public class CategoryResources {
 
     //Injeção de dependência
-    @Autowired
+    @Autowired //Resolve a dependência
     private CategoryRepository categoryRepository;
 
     //Busca Uma lista
-    @GetMapping
+    @GetMapping //Na chamada, executa o método abaixo
     public ResponseEntity<List<Category>> findAll(){ //ResponseEntity, Encapsula a resposta http
         List<Category> list = categoryRepository.findAll(); //acessa os dados e devolve.
         return ResponseEntity.ok().body(list); //Retorna Resposta OK
